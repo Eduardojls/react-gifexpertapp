@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { shallow } from 'enzyme';
-import { AddCategory } from '../../component/AddCategory';
+import { AddCategory } from '../component/AddCategory';
 
 describe('Pruebas en <AddCategory />', () => {
 
@@ -47,7 +47,7 @@ describe('Pruebas en <AddCategory />', () => {
         wrapper.find('form').simulate('submit', { preventDefault() { } });
 
         // 3. setCategories se debe haber llamado 1 vez
-        expect(setCategories).toHaveBeenCalled();
+        expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
 
         // 4. El valor del input debe estar ''
         expect(wrapper.find('input').prop('value')).toBe('');
